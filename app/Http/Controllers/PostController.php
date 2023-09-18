@@ -9,7 +9,9 @@ class PostController extends Controller
 {
     public function index(Post $post)
     {
-        return view('posts.index')->with(['posts'=>$post->getByLimit(2)]);
+        /*$test = $post->orderBy('updated_at', 'DESC')->limit(2)->tosql();
+        dd($test);*/
+        return view('posts.index')->with(['posts'=>$post->getPaginateByLimit()]);
     }
     
 }
