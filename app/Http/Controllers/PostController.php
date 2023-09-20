@@ -11,5 +11,11 @@ class PostController extends Controller
     {
         return $post->get();
     }
-    //
+    
+    
+    public function show(Post $post)
+    {
+        
+        return view('posts.show')->with(['post' => $post]);
+    }
 }
